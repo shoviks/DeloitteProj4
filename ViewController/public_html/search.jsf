@@ -150,6 +150,7 @@
                    disabled="#{!bindings.setCurrentRowWithKeyValue.enabled}" id="b1" action="edit_project"
                    icon="#{resource['edit_ena.png']}"/>
         <af:button text="New" id="b2" icon="#{resource['new_ena.png']}" action="add_project"/>
+        <af:button text="button 1" id="b3"/>
         <af:spacer width="10" height="10" id="s1"/>
         <af:panelTabbed position="above" id="pt1">
           <af:showDetailItem id="tab10" text="Document Info">
