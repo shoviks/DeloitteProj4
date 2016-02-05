@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SysC002058464Assoc"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="PsFDProjects"
+    Cardinality="1"
+    Source="true"
+    Owner="model.PsFDProjects">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="PsFDProjects"/>
+      <Attr Name="_foreignKey" Value="model.PsFDProjects.SysC002058450"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.PsFDProjects.ProjId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="PsFDNomenclature"
+    Cardinality="-1"
+    Owner="model.PsFDNomenclature">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="PsFDNomenclature"/>
+      <Attr Name="_foreignKey" Value="model.PsFDNomenclature.SysC002058464"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.PsFDNomenclature.ProjId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

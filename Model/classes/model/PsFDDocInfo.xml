@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PsFDDocInfo"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="PS_F_D_DOC_INFO"
+  AliasName="PsFDDocInfo"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="DocNo"
+    IsNotNull="true"
+    Precision="8"
+    Scale="0"
+    ColumnName="DOC_NO"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="PS_F_D_DOC_INFO"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ProjId"
+    Precision="8"
+    Scale="0"
+    ColumnName="PROJ_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="PS_F_D_DOC_INFO"/>
+  <Attribute
+    Name="DocIdentification"
+    Precision="50"
+    ColumnName="DOC_IDENTIFICATION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PS_F_D_DOC_INFO">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DocName"
+    Precision="50"
+    ColumnName="DOC_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PS_F_D_DOC_INFO">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProjName"
+    Precision="30"
+    ColumnName="PROJ_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PS_F_D_DOC_INFO">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ClientName"
+    Precision="30"
+    ColumnName="CLIENT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PS_F_D_DOC_INFO">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DocAuthor"
+    Precision="30"
+    ColumnName="DOC_AUTHOR"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PS_F_D_DOC_INFO">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DocVersion"
+    Precision="3"
+    Scale="2"
+    ColumnName="DOC_VERSION"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PS_F_D_DOC_INFO"/>
+  <Attribute
+    Name="DocStatus"
+    Precision="30"
+    ColumnName="DOC_STATUS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PS_F_D_DOC_INFO">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DateReleased"
+    ColumnName="DATE_RELEASED"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="PS_F_D_DOC_INFO"/>
+  <AccessorAttribute
+    Name="PsFDProjects"
+    Association="model.SysC002058468Assoc"
+    AssociationEnd="model.SysC002058468Assoc.PsFDProjects"
+    AssociationOtherEnd="model.SysC002058468Assoc.PsFDDocInfo"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SysC002058467"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C002058467"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.PsFDDocInfo.DocNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC002058468">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C002058450"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SYS_C002058468"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.PsFDDocInfo.ProjId"/>
+    </AttrArray>
+  </Key>
+</Entity>

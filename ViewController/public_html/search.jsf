@@ -1,0 +1,619 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="search.jsf" id="d1">
+    <af:messages id="m1"/>
+    <af:form id="f1">
+      <af:panelGroupLayout layout="vertical" id="pgl1">
+        <af:panelHeader text="Projects" id="ph1">
+          <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                         value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                         model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                         queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}">
+            <f:facet name="end">
+              <af:commandLink text="Advanced" rendered="false" id="cl1"/>
+            </f:facet>
+          </af:quickQuery>
+        </af:panelHeader>
+        <af:table value="#{bindings.PsFDProjectsView1.collectionModel}" var="row"
+                  rows="#{bindings.PsFDProjectsView1.rangeSize}"
+                  emptyText="#{bindings.PsFDProjectsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  rowBandingInterval="0" selectedRowKeys="#{bindings.PsFDProjectsView1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.PsFDProjectsView1.collectionModel.makeCurrent}" rowSelection="single"
+                  fetchSize="#{bindings.PsFDProjectsView1.rangeSize}" id="t1"
+                  partialTriggers="::qryId1 ::qryId1:cl1 ::b1">
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.ProjId.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.ProjId.label}" id="c1">
+            <af:outputText value="#{row.ProjId}" shortDesc="#{bindings.PsFDProjectsView1.hints.ProjId.tooltip}"
+                           id="ot1">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.PsFDProjectsView1.hints.ProjId.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.ProjName.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.ProjName.label}" id="c2">
+            <af:outputText value="#{row.ProjName}" shortDesc="#{bindings.PsFDProjectsView1.hints.ProjName.tooltip}"
+                           id="ot2"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.Objective.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.Objective.label}" id="c3">
+            <af:outputText value="#{row.Objective}" shortDesc="#{bindings.PsFDProjectsView1.hints.Objective.tooltip}"
+                           id="ot3"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.BusNeeds.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.BusNeeds.label}" id="c4">
+            <af:outputText value="#{row.BusNeeds}" shortDesc="#{bindings.PsFDProjectsView1.hints.BusNeeds.tooltip}"
+                           id="ot4"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.MajorFeatures.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.MajorFeatures.label}" id="c5">
+            <af:outputText value="#{row.MajorFeatures}"
+                           shortDesc="#{bindings.PsFDProjectsView1.hints.MajorFeatures.tooltip}" id="ot5"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.Modules.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.Modules.label}" id="c6">
+            <af:outputText value="#{row.Modules}" shortDesc="#{bindings.PsFDProjectsView1.hints.Modules.tooltip}"
+                           id="ot6"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.Systems.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.Systems.label}" id="c7">
+            <af:outputText value="#{row.Systems}" shortDesc="#{bindings.PsFDProjectsView1.hints.Systems.tooltip}"
+                           id="ot7"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.Assumptions.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.Assumptions.label}" id="c8">
+            <af:outputText value="#{row.Assumptions}"
+                           shortDesc="#{bindings.PsFDProjectsView1.hints.Assumptions.tooltip}" id="ot8"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.DependenciesAndPrereqs.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.DependenciesAndPrereqs.label}" id="c9">
+            <af:outputText value="#{row.DependenciesAndPrereqs}"
+                           shortDesc="#{bindings.PsFDProjectsView1.hints.DependenciesAndPrereqs.tooltip}" id="ot9"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.RefsToReqs.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.RefsToReqs.label}" id="c10">
+            <af:outputText value="#{row.RefsToReqs}" shortDesc="#{bindings.PsFDProjectsView1.hints.RefsToReqs.tooltip}"
+                           id="ot10"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.SourceAndTargetSysDescr.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.SourceAndTargetSysDescr.label}" id="c11">
+            <af:outputText value="#{row.SourceAndTargetSysDescr}"
+                           shortDesc="#{bindings.PsFDProjectsView1.hints.SourceAndTargetSysDescr.tooltip}" id="ot11"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.ProcessFlowDiagram.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.ProcessFlowDiagram.label}" id="c12">
+            <af:outputText value="#{row.ProcessFlowDiagram}"
+                           shortDesc="#{bindings.PsFDProjectsView1.hints.ProcessFlowDiagram.tooltip}" id="ot12"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.ProcessStepsDescr.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.ProcessStepsDescr.label}" id="c13">
+            <af:outputText value="#{row.ProcessStepsDescr}"
+                           shortDesc="#{bindings.PsFDProjectsView1.hints.ProcessStepsDescr.tooltip}" id="ot13"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.DataMappings.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.DataMappings.label}" id="c14">
+            <af:outputText value="#{row.DataMappings}"
+                           shortDesc="#{bindings.PsFDProjectsView1.hints.DataMappings.tooltip}" id="ot14"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.AddProcessLogic.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.AddProcessLogic.label}" id="c15">
+            <af:outputText value="#{row.AddProcessLogic}"
+                           shortDesc="#{bindings.PsFDProjectsView1.hints.AddProcessLogic.tooltip}" id="ot15"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.DataSelectAndFilterCrit.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.DataSelectAndFilterCrit.label}" id="c16">
+            <af:outputText value="#{row.DataSelectAndFilterCrit}"
+                           shortDesc="#{bindings.PsFDProjectsView1.hints.DataSelectAndFilterCrit.tooltip}" id="ot16"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.PreExtractCleanUpCrit.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.PreExtractCleanUpCrit.label}" id="c17">
+            <af:outputText value="#{row.PreExtractCleanUpCrit}"
+                           shortDesc="#{bindings.PsFDProjectsView1.hints.PreExtractCleanUpCrit.tooltip}" id="ot17"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.TestScenarioAcceptanceCrit.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.TestScenarioAcceptanceCrit.label}" id="c18">
+            <af:outputText value="#{row.TestScenarioAcceptanceCrit}"
+                           shortDesc="#{bindings.PsFDProjectsView1.hints.TestScenarioAcceptanceCrit.tooltip}"
+                           id="ot18"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.VolAndPerfReqs.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.VolAndPerfReqs.label}" id="c19">
+            <af:outputText value="#{row.VolAndPerfReqs}"
+                           shortDesc="#{bindings.PsFDProjectsView1.hints.VolAndPerfReqs.tooltip}" id="ot19"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.InitFreqAndSchedReqs.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.InitFreqAndSchedReqs.label}" id="c20">
+            <af:outputText value="#{row.InitFreqAndSchedReqs}"
+                           shortDesc="#{bindings.PsFDProjectsView1.hints.InitFreqAndSchedReqs.tooltip}" id="ot20"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.SecurityAndControlsReqs.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.SecurityAndControlsReqs.label}" id="c21">
+            <af:outputText value="#{row.SecurityAndControlsReqs}"
+                           shortDesc="#{bindings.PsFDProjectsView1.hints.SecurityAndControlsReqs.tooltip}" id="ot21"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.LogOutput.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.LogOutput.label}" id="c22">
+            <af:outputText value="#{row.LogOutput}" shortDesc="#{bindings.PsFDProjectsView1.hints.LogOutput.tooltip}"
+                           id="ot22"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.RestartProcedures.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.RestartProcedures.label}" id="c23">
+            <af:outputText value="#{row.RestartProcedures}"
+                           shortDesc="#{bindings.PsFDProjectsView1.hints.RestartProcedures.tooltip}" id="ot23"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.Appendix.name}" sortable="true"
+                     headerText="#{bindings.PsFDProjectsView1.hints.Appendix.label}" id="c24">
+            <af:outputText value="#{row.Appendix}" shortDesc="#{bindings.PsFDProjectsView1.hints.Appendix.tooltip}"
+                           id="ot24"/>
+          </af:column>
+        </af:table>
+        <af:button actionListener="#{bindings.setCurrentRowWithKeyValue.execute}" text="Edit"
+                   disabled="#{!bindings.setCurrentRowWithKeyValue.enabled}" id="b1" action="edit_project"
+                   icon="#{resource['edit_ena.png']}"/>
+        <af:button text="New" id="b2" icon="#{resource['new_ena.png']}" action="add_project"/>
+        <af:spacer width="10" height="10" id="s1"/>
+        <af:panelTabbed position="above" id="pt1">
+          <af:showDetailItem id="tab10" text="Document Info">
+            <af:table value="#{bindings.PsFDDocInfoView2.collectionModel}" var="row"
+                      rows="#{bindings.PsFDDocInfoView2.rangeSize}"
+                      emptyText="#{bindings.PsFDDocInfoView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0" selectedRowKeys="#{bindings.PsFDDocInfoView2.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.PsFDDocInfoView2.collectionModel.makeCurrent}" rowSelection="single"
+                      fetchSize="#{bindings.PsFDDocInfoView2.rangeSize}" id="t3">
+              <af:column headerText="#{bindings.PsFDDocInfoView2.hints.DocNo.label}" id="c30">
+                <af:outputText value="#{row.DocNo}" shortDesc="#{bindings.PsFDDocInfoView2.hints.DocNo.tooltip}"
+                               id="ot30">
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.PsFDDocInfoView2.hints.DocNo.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocInfoView2.hints.ProjId.label}" id="c31">
+                <af:outputText value="#{row.ProjId}" shortDesc="#{bindings.PsFDDocInfoView2.hints.ProjId.tooltip}"
+                               id="ot31">
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.PsFDDocInfoView2.hints.ProjId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocInfoView2.hints.DocIdentification.label}" id="c32">
+                <af:outputText value="#{row.DocIdentification}"
+                               shortDesc="#{bindings.PsFDDocInfoView2.hints.DocIdentification.tooltip}" id="ot32"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocInfoView2.hints.DocName.label}" id="c33">
+                <af:outputText value="#{row.DocName}" shortDesc="#{bindings.PsFDDocInfoView2.hints.DocName.tooltip}"
+                               id="ot33"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocInfoView2.hints.ProjName.label}" id="c34">
+                <af:outputText value="#{row.ProjName}" shortDesc="#{bindings.PsFDDocInfoView2.hints.ProjName.tooltip}"
+                               id="ot34"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocInfoView2.hints.ClientName.label}" id="c35">
+                <af:outputText value="#{row.ClientName}"
+                               shortDesc="#{bindings.PsFDDocInfoView2.hints.ClientName.tooltip}" id="ot35"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocInfoView2.hints.DocAuthor.label}" id="c36">
+                <af:outputText value="#{row.DocAuthor}" shortDesc="#{bindings.PsFDDocInfoView2.hints.DocAuthor.tooltip}"
+                               id="ot36"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocInfoView2.hints.DocVersion.label}" id="c37">
+                <af:outputText value="#{row.DocVersion}"
+                               shortDesc="#{bindings.PsFDDocInfoView2.hints.DocVersion.tooltip}" id="ot37">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.PsFDDocInfoView2.hints.DocVersion.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocInfoView2.hints.DocStatus.label}" id="c38">
+                <af:outputText value="#{row.DocStatus}" shortDesc="#{bindings.PsFDDocInfoView2.hints.DocStatus.tooltip}"
+                               id="ot38"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocInfoView2.hints.DateReleased.label}" id="c39">
+                <af:outputText value="#{row.DateReleased}"
+                               shortDesc="#{bindings.PsFDDocInfoView2.hints.DateReleased.tooltip}" id="ot39">
+                  <af:convertDateTime pattern="#{bindings.PsFDDocInfoView2.hints.DateReleased.format}"/>
+                </af:outputText>
+              </af:column>
+            </af:table>
+          </af:showDetailItem>
+          <af:showDetailItem id="tab1" text="Document Edit History">
+            <af:table value="#{bindings.PsFDDocEditHistView2.collectionModel}" var="row"
+                      rows="#{bindings.PsFDDocEditHistView2.rangeSize}"
+                      emptyText="#{bindings.PsFDDocEditHistView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0" fetchSize="#{bindings.PsFDDocEditHistView2.rangeSize}" id="t4">
+              <af:column headerText="#{bindings.PsFDDocEditHistView2.hints.ProjId.label}" id="c40">
+                <af:outputText value="#{row.ProjId}" shortDesc="#{bindings.PsFDDocEditHistView2.hints.ProjId.tooltip}"
+                               id="ot40">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.PsFDDocEditHistView2.hints.ProjId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocEditHistView2.hints.DocEditId.label}" id="c41">
+                <af:outputText value="#{row.DocEditId}"
+                               shortDesc="#{bindings.PsFDDocEditHistView2.hints.DocEditId.tooltip}" id="ot41">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.PsFDDocEditHistView2.hints.DocEditId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocEditHistView2.hints.DocVersion.label}" id="c42">
+                <af:outputText value="#{row.DocVersion}"
+                               shortDesc="#{bindings.PsFDDocEditHistView2.hints.DocVersion.tooltip}" id="ot42">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.PsFDDocEditHistView2.hints.DocVersion.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocEditHistView2.hints.EditDate.label}" id="c43">
+                <af:outputText value="#{row.EditDate}"
+                               shortDesc="#{bindings.PsFDDocEditHistView2.hints.EditDate.tooltip}" id="ot43">
+                  <af:convertDateTime pattern="#{bindings.PsFDDocEditHistView2.hints.EditDate.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocEditHistView2.hints.AddModifications.label}" id="c44">
+                <af:outputText value="#{row.AddModifications}"
+                               shortDesc="#{bindings.PsFDDocEditHistView2.hints.AddModifications.tooltip}" id="ot44"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocEditHistView2.hints.Cr.label}" id="c45">
+                <af:outputText value="#{row.Cr}" shortDesc="#{bindings.PsFDDocEditHistView2.hints.Cr.tooltip}"
+                               id="ot45"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocEditHistView2.hints.PreparedBy.label}" id="c46">
+                <af:outputText value="#{row.PreparedBy}"
+                               shortDesc="#{bindings.PsFDDocEditHistView2.hints.PreparedBy.tooltip}" id="ot46"/>
+              </af:column>
+            </af:table>
+          </af:showDetailItem>
+          <af:showDetailItem id="tab2" text="Document Review/Approval History">
+            <af:table value="#{bindings.PsFDDocRevApprovalHistView2.collectionModel}" var="row"
+                      rows="#{bindings.PsFDDocRevApprovalHistView2.rangeSize}"
+                      emptyText="#{bindings.PsFDDocRevApprovalHistView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0" fetchSize="#{bindings.PsFDDocRevApprovalHistView2.rangeSize}" id="t5">
+              <af:column headerText="#{bindings.PsFDDocRevApprovalHistView2.hints.DocRevId.label}" id="c47">
+                <af:outputText value="#{row.DocRevId}"
+                               shortDesc="#{bindings.PsFDDocRevApprovalHistView2.hints.DocRevId.tooltip}" id="ot47">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.PsFDDocRevApprovalHistView2.hints.DocRevId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocRevApprovalHistView2.hints.ProjId.label}" id="c48">
+                <af:outputText value="#{row.ProjId}"
+                               shortDesc="#{bindings.PsFDDocRevApprovalHistView2.hints.ProjId.tooltip}" id="ot48">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.PsFDDocRevApprovalHistView2.hints.ProjId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocRevApprovalHistView2.hints.ReviewDate.label}" id="c49">
+                <af:outputText value="#{row.ReviewDate}"
+                               shortDesc="#{bindings.PsFDDocRevApprovalHistView2.hints.ReviewDate.tooltip}" id="ot49">
+                  <af:convertDateTime pattern="#{bindings.PsFDDocRevApprovalHistView2.hints.ReviewDate.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocRevApprovalHistView2.hints.DocVersion.label}" id="c50">
+                <af:outputText value="#{row.DocVersion}"
+                               shortDesc="#{bindings.PsFDDocRevApprovalHistView2.hints.DocVersion.tooltip}" id="ot50">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.PsFDDocRevApprovalHistView2.hints.DocVersion.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocRevApprovalHistView2.hints.DocName.label}" id="c51">
+                <af:outputText value="#{row.DocName}"
+                               shortDesc="#{bindings.PsFDDocRevApprovalHistView2.hints.DocName.tooltip}" id="ot51"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocRevApprovalHistView2.hints.Title.label}" id="c52">
+                <af:outputText value="#{row.Title}"
+                               shortDesc="#{bindings.PsFDDocRevApprovalHistView2.hints.Title.tooltip}" id="ot52"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDocRevApprovalHistView2.hints.Comments.label}" id="c53">
+                <af:outputText value="#{row.Comments}"
+                               shortDesc="#{bindings.PsFDDocRevApprovalHistView2.hints.Comments.tooltip}" id="ot53"/>
+              </af:column>
+            </af:table>
+          </af:showDetailItem>
+          <af:showDetailItem id="tab3" text="Distribution of Final Document">
+            <af:table value="#{bindings.PsFDDistFinalDocView2.collectionModel}" var="row"
+                      rows="#{bindings.PsFDDistFinalDocView2.rangeSize}"
+                      emptyText="#{bindings.PsFDDistFinalDocView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0"
+                      selectedRowKeys="#{bindings.PsFDDistFinalDocView2.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.PsFDDistFinalDocView2.collectionModel.makeCurrent}"
+                      rowSelection="single" fetchSize="#{bindings.PsFDDistFinalDocView2.rangeSize}" id="t6">
+              <af:column headerText="#{bindings.PsFDDistFinalDocView2.hints.RecipientId.label}" id="c54">
+                <af:outputText value="#{row.RecipientId}"
+                               shortDesc="#{bindings.PsFDDistFinalDocView2.hints.RecipientId.tooltip}" id="ot54">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.PsFDDistFinalDocView2.hints.RecipientId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDistFinalDocView2.hints.ProjId.label}" id="c55">
+                <af:outputText value="#{row.ProjId}" shortDesc="#{bindings.PsFDDistFinalDocView2.hints.ProjId.tooltip}"
+                               id="ot55">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.PsFDDistFinalDocView2.hints.ProjId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDistFinalDocView2.hints.DocName.label}" id="c56">
+                <af:outputText value="#{row.DocName}"
+                               shortDesc="#{bindings.PsFDDistFinalDocView2.hints.DocName.tooltip}" id="ot56"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDDistFinalDocView2.hints.Title.label}" id="c57">
+                <af:outputText value="#{row.Title}" shortDesc="#{bindings.PsFDDistFinalDocView2.hints.Title.tooltip}"
+                               id="ot57"/>
+              </af:column>
+            </af:table>
+          </af:showDetailItem>
+          <af:showDetailItem id="tab4" text="Related Documents">
+            <af:table value="#{bindings.PsFDRelatedDocsView2.collectionModel}" var="row"
+                      rows="#{bindings.PsFDRelatedDocsView2.rangeSize}"
+                      emptyText="#{bindings.PsFDRelatedDocsView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0"
+                      selectedRowKeys="#{bindings.PsFDRelatedDocsView2.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.PsFDRelatedDocsView2.collectionModel.makeCurrent}"
+                      rowSelection="single" fetchSize="#{bindings.PsFDRelatedDocsView2.rangeSize}" id="t7">
+              <af:column headerText="#{bindings.PsFDRelatedDocsView2.hints.RelatedDocId.label}" id="c58">
+                <af:outputText value="#{row.RelatedDocId}"
+                               shortDesc="#{bindings.PsFDRelatedDocsView2.hints.RelatedDocId.tooltip}" id="ot58">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.PsFDRelatedDocsView2.hints.RelatedDocId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDRelatedDocsView2.hints.ProjId.label}" id="c59">
+                <af:outputText value="#{row.ProjId}" shortDesc="#{bindings.PsFDRelatedDocsView2.hints.ProjId.tooltip}"
+                               id="ot59">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.PsFDRelatedDocsView2.hints.ProjId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDRelatedDocsView2.hints.DocName.label}" id="c60">
+                <af:outputText value="#{row.DocName}" shortDesc="#{bindings.PsFDRelatedDocsView2.hints.DocName.tooltip}"
+                               id="ot60"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDRelatedDocsView2.hints.Revision.label}" id="c61">
+                <af:outputText value="#{row.Revision}"
+                               shortDesc="#{bindings.PsFDRelatedDocsView2.hints.Revision.tooltip}" id="ot61"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDRelatedDocsView2.hints.DocDescr.label}" id="c62">
+                <af:outputText value="#{row.DocDescr}"
+                               shortDesc="#{bindings.PsFDRelatedDocsView2.hints.DocDescr.tooltip}" id="ot62"/>
+              </af:column>
+            </af:table>
+          </af:showDetailItem>
+          <af:showDetailItem id="tab5" text="Nomenclature">
+            <af:table value="#{bindings.PsFDNomenclatureView2.collectionModel}" var="row"
+                      rows="#{bindings.PsFDNomenclatureView2.rangeSize}"
+                      emptyText="#{bindings.PsFDNomenclatureView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0"
+                      selectedRowKeys="#{bindings.PsFDNomenclatureView2.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.PsFDNomenclatureView2.collectionModel.makeCurrent}"
+                      rowSelection="single" fetchSize="#{bindings.PsFDNomenclatureView2.rangeSize}" id="t8">
+              <af:column headerText="#{bindings.PsFDNomenclatureView2.hints.NomenclatureId.label}" id="c63">
+                <af:outputText value="#{row.NomenclatureId}"
+                               shortDesc="#{bindings.PsFDNomenclatureView2.hints.NomenclatureId.tooltip}" id="ot63">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.PsFDNomenclatureView2.hints.NomenclatureId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDNomenclatureView2.hints.ProjId.label}" id="c64">
+                <af:outputText value="#{row.ProjId}" shortDesc="#{bindings.PsFDNomenclatureView2.hints.ProjId.tooltip}"
+                               id="ot64">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.PsFDNomenclatureView2.hints.ProjId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDNomenclatureView2.hints.Acronym.label}" id="c65">
+                <af:outputText value="#{row.Acronym}"
+                               shortDesc="#{bindings.PsFDNomenclatureView2.hints.Acronym.tooltip}" id="ot65"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDNomenclatureView2.hints.Meaning.label}" id="c66">
+                <af:outputText value="#{row.Meaning}"
+                               shortDesc="#{bindings.PsFDNomenclatureView2.hints.Meaning.tooltip}" id="ot66"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDNomenclatureView2.hints.Description.label}" id="c67">
+                <af:outputText value="#{row.Description}"
+                               shortDesc="#{bindings.PsFDNomenclatureView2.hints.Description.tooltip}" id="ot67"/>
+              </af:column>
+            </af:table>
+          </af:showDetailItem>
+          <af:showDetailItem id="tab11" text="Interfaces">
+            <af:table value="#{bindings.PsFDInterfacesView2.collectionModel}" var="row"
+                      rows="#{bindings.PsFDInterfacesView2.rangeSize}"
+                      emptyText="#{bindings.PsFDInterfacesView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0"
+                      selectedRowKeys="#{bindings.PsFDInterfacesView2.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.PsFDInterfacesView2.collectionModel.makeCurrent}"
+                      rowSelection="single" fetchSize="#{bindings.PsFDInterfacesView2.rangeSize}" id="t9">
+              <af:column headerText="#{bindings.PsFDInterfacesView2.hints.InterfaceId.label}" id="c68">
+                <af:outputText value="#{row.InterfaceId}"
+                               shortDesc="#{bindings.PsFDInterfacesView2.hints.InterfaceId.tooltip}" id="ot68">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.PsFDInterfacesView2.hints.InterfaceId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDInterfacesView2.hints.ProjId.label}" id="c69">
+                <af:outputText value="#{row.ProjId}" shortDesc="#{bindings.PsFDInterfacesView2.hints.ProjId.tooltip}"
+                               id="ot69">
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.PsFDInterfacesView2.hints.ProjId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDInterfacesView2.hints.InterfaceName.label}" id="c70">
+                <af:outputText value="#{row.InterfaceName}"
+                               shortDesc="#{bindings.PsFDInterfacesView2.hints.InterfaceName.tooltip}" id="ot70"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDInterfacesView2.hints.InterfaceShortDescr.label}" id="c71">
+                <af:outputText value="#{row.InterfaceShortDescr}"
+                               shortDesc="#{bindings.PsFDInterfacesView2.hints.InterfaceShortDescr.tooltip}" id="ot71"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDInterfacesView2.hints.Direction.label}" id="c72">
+                <af:outputText value="#{row.Direction}"
+                               shortDesc="#{bindings.PsFDInterfacesView2.hints.Direction.tooltip}" id="ot72"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDInterfacesView2.hints.DataCategory.label}" id="c73">
+                <af:outputText value="#{row.DataCategory}"
+                               shortDesc="#{bindings.PsFDInterfacesView2.hints.DataCategory.tooltip}" id="ot73"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDInterfacesView2.hints.InterfaceType.label}" id="c74">
+                <af:outputText value="#{row.InterfaceType}"
+                               shortDesc="#{bindings.PsFDInterfacesView2.hints.InterfaceType.tooltip}" id="ot74"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDInterfacesView2.hints.BusinessPriority.label}" id="c75">
+                <af:outputText value="#{row.BusinessPriority}"
+                               shortDesc="#{bindings.PsFDInterfacesView2.hints.BusinessPriority.tooltip}" id="ot75"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDInterfacesView2.hints.Frequency.label}" id="c76">
+                <af:outputText value="#{row.Frequency}"
+                               shortDesc="#{bindings.PsFDInterfacesView2.hints.Frequency.tooltip}" id="ot76"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDInterfacesView2.hints.FromSystem.label}" id="c77">
+                <af:outputText value="#{row.FromSystem}"
+                               shortDesc="#{bindings.PsFDInterfacesView2.hints.FromSystem.tooltip}" id="ot77"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDInterfacesView2.hints.AddComments.label}" id="c78">
+                <af:outputText value="#{row.AddComments}"
+                               shortDesc="#{bindings.PsFDInterfacesView2.hints.AddComments.tooltip}" id="ot78"/>
+              </af:column>
+            </af:table>
+          </af:showDetailItem>
+          <af:showDetailItem id="tab6" text="Business Rules">
+            <af:table value="#{bindings.PsFDBusRulesView2.collectionModel}" var="row"
+                      rows="#{bindings.PsFDBusRulesView2.rangeSize}"
+                      emptyText="#{bindings.PsFDBusRulesView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0" selectedRowKeys="#{bindings.PsFDBusRulesView2.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.PsFDBusRulesView2.collectionModel.makeCurrent}"
+                      rowSelection="single" fetchSize="#{bindings.PsFDBusRulesView2.rangeSize}" id="t2">
+              <af:column headerText="#{bindings.PsFDBusRulesView2.hints.ProjId.label}" id="c25">
+                <af:outputText value="#{row.ProjId}" shortDesc="#{bindings.PsFDBusRulesView2.hints.ProjId.tooltip}"
+                               id="ot25">
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.PsFDBusRulesView2.hints.ProjId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDBusRulesView2.hints.RuleType.label}" id="c26">
+                <af:outputText value="#{row.RuleType}" shortDesc="#{bindings.PsFDBusRulesView2.hints.RuleType.tooltip}"
+                               id="ot26"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDBusRulesView2.hints.RuleId.label}" id="c27">
+                <af:outputText value="#{row.RuleId}" shortDesc="#{bindings.PsFDBusRulesView2.hints.RuleId.tooltip}"
+                               id="ot27"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDBusRulesView2.hints.Description.label}" id="c28">
+                <af:outputText value="#{row.Description}"
+                               shortDesc="#{bindings.PsFDBusRulesView2.hints.Description.tooltip}" id="ot28"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDBusRulesView2.hints.Comments.label}" id="c29">
+                <af:outputText value="#{row.Comments}" shortDesc="#{bindings.PsFDBusRulesView2.hints.Comments.tooltip}"
+                               id="ot29"/>
+              </af:column>
+            </af:table>
+          </af:showDetailItem>
+          <af:showDetailItem id="tab7" text="Errors">
+            <af:table value="#{bindings.PsFDErrorsView2.collectionModel}" var="row"
+                      rows="#{bindings.PsFDErrorsView2.rangeSize}"
+                      emptyText="#{bindings.PsFDErrorsView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0" selectedRowKeys="#{bindings.PsFDErrorsView2.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.PsFDErrorsView2.collectionModel.makeCurrent}" rowSelection="single"
+                      fetchSize="#{bindings.PsFDErrorsView2.rangeSize}" id="t10">
+              <af:column headerText="#{bindings.PsFDErrorsView2.hints.ErrorId.label}" id="c79">
+                <af:outputText value="#{row.ErrorId}" shortDesc="#{bindings.PsFDErrorsView2.hints.ErrorId.tooltip}"
+                               id="ot91">
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.PsFDErrorsView2.hints.ErrorId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDErrorsView2.hints.ProjId.label}" id="c80">
+                <af:outputText value="#{row.ProjId}" shortDesc="#{bindings.PsFDErrorsView2.hints.ProjId.tooltip}"
+                               id="ot92">
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.PsFDErrorsView2.hints.ProjId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDErrorsView2.hints.SNo.label}" id="c81">
+                <af:outputText value="#{row.SNo}" shortDesc="#{bindings.PsFDErrorsView2.hints.SNo.tooltip}" id="ot93"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDErrorsView2.hints.ErrorCode.label}" id="c82">
+                <af:outputText value="#{row.ErrorCode}" shortDesc="#{bindings.PsFDErrorsView2.hints.ErrorCode.tooltip}"
+                               id="ot94"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDErrorsView2.hints.ErrorType.label}" id="c83">
+                <af:outputText value="#{row.ErrorType}" shortDesc="#{bindings.PsFDErrorsView2.hints.ErrorType.tooltip}"
+                               id="ot95"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDErrorsView2.hints.Description.label}" id="c84">
+                <af:outputText value="#{row.Description}"
+                               shortDesc="#{bindings.PsFDErrorsView2.hints.Description.tooltip}" id="ot96"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDErrorsView2.hints.Handler.label}" id="c85">
+                <af:outputText value="#{row.Handler}" shortDesc="#{bindings.PsFDErrorsView2.hints.Handler.tooltip}"
+                               id="ot97"/>
+              </af:column>
+            </af:table>
+          </af:showDetailItem>
+          <af:showDetailItem id="tab8" text="Open Issues">
+            <af:table value="#{bindings.PsFDOpenIssuesView2.collectionModel}" var="row"
+                      rows="#{bindings.PsFDOpenIssuesView2.rangeSize}"
+                      emptyText="#{bindings.PsFDOpenIssuesView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0"
+                      selectedRowKeys="#{bindings.PsFDOpenIssuesView2.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.PsFDOpenIssuesView2.collectionModel.makeCurrent}"
+                      rowSelection="single" fetchSize="#{bindings.PsFDOpenIssuesView2.rangeSize}" id="t11">
+              <af:column headerText="#{bindings.PsFDOpenIssuesView2.hints.IssueId.label}" id="c86">
+                <af:outputText value="#{row.IssueId}" shortDesc="#{bindings.PsFDOpenIssuesView2.hints.IssueId.tooltip}"
+                               id="ot79">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.PsFDOpenIssuesView2.hints.IssueId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDOpenIssuesView2.hints.ProjId.label}" id="c87">
+                <af:outputText value="#{row.ProjId}" shortDesc="#{bindings.PsFDOpenIssuesView2.hints.ProjId.tooltip}"
+                               id="ot80">
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.PsFDOpenIssuesView2.hints.ProjId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDOpenIssuesView2.hints.Description.label}" id="c88">
+                <af:outputText value="#{row.Description}"
+                               shortDesc="#{bindings.PsFDOpenIssuesView2.hints.Description.tooltip}" id="ot81"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDOpenIssuesView2.hints.OpenedBy.label}" id="c89">
+                <af:outputText value="#{row.OpenedBy}"
+                               shortDesc="#{bindings.PsFDOpenIssuesView2.hints.OpenedBy.tooltip}" id="ot82"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDOpenIssuesView2.hints.Responsible.label}" id="c90">
+                <af:outputText value="#{row.Responsible}"
+                               shortDesc="#{bindings.PsFDOpenIssuesView2.hints.Responsible.tooltip}" id="ot83"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDOpenIssuesView2.hints.DueDate.label}" id="c91">
+                <af:outputText value="#{row.DueDate}" shortDesc="#{bindings.PsFDOpenIssuesView2.hints.DueDate.tooltip}"
+                               id="ot84">
+                  <af:convertDateTime pattern="#{bindings.PsFDOpenIssuesView2.hints.DueDate.format}"/>
+                </af:outputText>
+              </af:column>
+            </af:table>
+          </af:showDetailItem>
+          <af:showDetailItem id="tab9" text="Closed Issues">
+            <af:table value="#{bindings.PsFDClosedIssuesView2.collectionModel}" var="row"
+                      rows="#{bindings.PsFDClosedIssuesView2.rangeSize}"
+                      emptyText="#{bindings.PsFDClosedIssuesView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0"
+                      selectedRowKeys="#{bindings.PsFDClosedIssuesView2.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.PsFDClosedIssuesView2.collectionModel.makeCurrent}"
+                      rowSelection="single" fetchSize="#{bindings.PsFDClosedIssuesView2.rangeSize}" id="t12">
+              <af:column headerText="#{bindings.PsFDClosedIssuesView2.hints.IssueId.label}" id="c92">
+                <af:outputText value="#{row.IssueId}"
+                               shortDesc="#{bindings.PsFDClosedIssuesView2.hints.IssueId.tooltip}" id="ot85">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.PsFDClosedIssuesView2.hints.IssueId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDClosedIssuesView2.hints.Description.label}" id="c93">
+                <af:outputText value="#{row.Description}"
+                               shortDesc="#{bindings.PsFDClosedIssuesView2.hints.Description.tooltip}" id="ot86"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDClosedIssuesView2.hints.Resolution.label}" id="c94">
+                <af:outputText value="#{row.Resolution}"
+                               shortDesc="#{bindings.PsFDClosedIssuesView2.hints.Resolution.tooltip}" id="ot87"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDClosedIssuesView2.hints.Signoff.label}" id="c95">
+                <af:outputText value="#{row.Signoff}"
+                               shortDesc="#{bindings.PsFDClosedIssuesView2.hints.Signoff.tooltip}" id="ot88"/>
+              </af:column>
+              <af:column headerText="#{bindings.PsFDClosedIssuesView2.hints.ClosedDate.label}" id="c96">
+                <af:outputText value="#{row.ClosedDate}"
+                               shortDesc="#{bindings.PsFDClosedIssuesView2.hints.ClosedDate.tooltip}" id="ot89">
+                  <af:convertDateTime pattern="#{bindings.PsFDClosedIssuesView2.hints.ClosedDate.format}"/>
+                </af:outputText>
+              </af:column>
+            </af:table>
+          </af:showDetailItem>
+        </af:panelTabbed>
+      </af:panelGroupLayout>
+    </af:form>
+  </af:document>
+</f:view>

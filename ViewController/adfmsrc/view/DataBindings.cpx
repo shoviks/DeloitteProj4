@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.0.31" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <pageMap>
+    <page path="/master.jsf" usageId="view_masterPageDef"/>
+    <page path="/search.jsf" usageId="view_searchPageDef"/>
+    <page path="PageFlow#CreateInsert" usageId="view_adfc_config___CreateInsertPageDef"/>
+    <page path="PageFlow#Commit" usageId="view_adfc_config___CommitPageDef"/>
+    <page path="/edit_form.jsf" usageId="view_edit_formPageDef"/>
+    <page path="/create_form.jsf" usageId="view_create_formPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_masterPageDef" path="view.pageDefs.masterPageDef"/>
+    <page id="view_searchPageDef" path="view.pageDefs.searchPageDef"/>
+    <page id="view_adfc_config___CreateInsertPageDef" path="view.pageDefs.adfc_config___CreateInsertPageDef"/>
+    <page id="view_adfc_config___CommitPageDef" path="view.pageDefs.adfc_config___CommitPageDef"/>
+    <page id="view_edit_formPageDef" path="view.pageDefs.edit_formPageDef"/>
+    <page id="view_create_formPageDef" path="view.pageDefs.create_formPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

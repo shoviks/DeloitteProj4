@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="edit_form.jsf" id="d1">
+    <af:messages id="m1"/>
+    <af:form id="f1">
+      <af:panelFormLayout id="pfl1">
+        <af:inputText value="#{bindings.ProjId.inputValue}" label="#{bindings.ProjId.hints.label}"
+                      required="#{bindings.ProjId.hints.mandatory}" columns="#{bindings.ProjId.hints.displayWidth}"
+                      maximumLength="#{bindings.ProjId.hints.precision}" shortDesc="#{bindings.ProjId.hints.tooltip}"
+                      id="it1">
+          <f:validator binding="#{bindings.ProjId.validator}"/>
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.ProjId.format}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.ProjName.inputValue}" label="#{bindings.ProjName.hints.label}"
+                      required="#{bindings.ProjName.hints.mandatory}" columns="#{bindings.ProjName.hints.displayWidth}"
+                      maximumLength="#{bindings.ProjName.hints.precision}"
+                      shortDesc="#{bindings.ProjName.hints.tooltip}" id="it2">
+          <f:validator binding="#{bindings.ProjName.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.Objective.inputValue}" label="#{bindings.Objective.hints.label}"
+                      required="#{bindings.Objective.hints.mandatory}"
+                      columns="#{bindings.Objective.hints.displayWidth}"
+                      maximumLength="#{bindings.Objective.hints.precision}"
+                      shortDesc="#{bindings.Objective.hints.tooltip}" id="it3">
+          <f:validator binding="#{bindings.Objective.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.BusNeeds.inputValue}" label="#{bindings.BusNeeds.hints.label}"
+                      required="#{bindings.BusNeeds.hints.mandatory}" columns="#{bindings.BusNeeds.hints.displayWidth}"
+                      maximumLength="#{bindings.BusNeeds.hints.precision}"
+                      shortDesc="#{bindings.BusNeeds.hints.tooltip}" id="it4">
+          <f:validator binding="#{bindings.BusNeeds.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.MajorFeatures.inputValue}" label="#{bindings.MajorFeatures.hints.label}"
+                      required="#{bindings.MajorFeatures.hints.mandatory}"
+                      columns="#{bindings.MajorFeatures.hints.displayWidth}"
+                      maximumLength="#{bindings.MajorFeatures.hints.precision}"
+                      shortDesc="#{bindings.MajorFeatures.hints.tooltip}" id="it5">
+          <f:validator binding="#{bindings.MajorFeatures.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.Modules.inputValue}" label="#{bindings.Modules.hints.label}"
+                      required="#{bindings.Modules.hints.mandatory}" columns="#{bindings.Modules.hints.displayWidth}"
+                      maximumLength="#{bindings.Modules.hints.precision}" shortDesc="#{bindings.Modules.hints.tooltip}"
+                      id="it6">
+          <f:validator binding="#{bindings.Modules.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.Systems.inputValue}" label="#{bindings.Systems.hints.label}"
+                      required="#{bindings.Systems.hints.mandatory}" columns="#{bindings.Systems.hints.displayWidth}"
+                      maximumLength="#{bindings.Systems.hints.precision}" shortDesc="#{bindings.Systems.hints.tooltip}"
+                      id="it7">
+          <f:validator binding="#{bindings.Systems.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.Assumptions.inputValue}" label="#{bindings.Assumptions.hints.label}"
+                      required="#{bindings.Assumptions.hints.mandatory}"
+                      columns="#{bindings.Assumptions.hints.displayWidth}"
+                      maximumLength="#{bindings.Assumptions.hints.precision}"
+                      shortDesc="#{bindings.Assumptions.hints.tooltip}" id="it8">
+          <f:validator binding="#{bindings.Assumptions.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.DependenciesAndPrereqs.inputValue}"
+                      label="#{bindings.DependenciesAndPrereqs.hints.label}"
+                      required="#{bindings.DependenciesAndPrereqs.hints.mandatory}"
+                      columns="#{bindings.DependenciesAndPrereqs.hints.displayWidth}"
+                      maximumLength="#{bindings.DependenciesAndPrereqs.hints.precision}"
+                      shortDesc="#{bindings.DependenciesAndPrereqs.hints.tooltip}" id="it9">
+          <f:validator binding="#{bindings.DependenciesAndPrereqs.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.RefsToReqs.inputValue}" label="#{bindings.RefsToReqs.hints.label}"
+                      required="#{bindings.RefsToReqs.hints.mandatory}"
+                      columns="#{bindings.RefsToReqs.hints.displayWidth}"
+                      maximumLength="#{bindings.RefsToReqs.hints.precision}"
+                      shortDesc="#{bindings.RefsToReqs.hints.tooltip}" id="it10">
+          <f:validator binding="#{bindings.RefsToReqs.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.SourceAndTargetSysDescr.inputValue}"
+                      label="#{bindings.SourceAndTargetSysDescr.hints.label}"
+                      required="#{bindings.SourceAndTargetSysDescr.hints.mandatory}"
+                      columns="#{bindings.SourceAndTargetSysDescr.hints.displayWidth}"
+                      maximumLength="#{bindings.SourceAndTargetSysDescr.hints.precision}"
+                      shortDesc="#{bindings.SourceAndTargetSysDescr.hints.tooltip}" id="it11">
+          <f:validator binding="#{bindings.SourceAndTargetSysDescr.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.ProcessFlowDiagram.inputValue}"
+                      label="#{bindings.ProcessFlowDiagram.hints.label}"
+                      required="#{bindings.ProcessFlowDiagram.hints.mandatory}"
+                      columns="#{bindings.ProcessFlowDiagram.hints.displayWidth}"
+                      maximumLength="#{bindings.ProcessFlowDiagram.hints.precision}"
+                      shortDesc="#{bindings.ProcessFlowDiagram.hints.tooltip}" id="it12">
+          <f:validator binding="#{bindings.ProcessFlowDiagram.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.ProcessStepsDescr.inputValue}" label="#{bindings.ProcessStepsDescr.hints.label}"
+                      required="#{bindings.ProcessStepsDescr.hints.mandatory}"
+                      columns="#{bindings.ProcessStepsDescr.hints.displayWidth}"
+                      maximumLength="#{bindings.ProcessStepsDescr.hints.precision}"
+                      shortDesc="#{bindings.ProcessStepsDescr.hints.tooltip}" id="it13">
+          <f:validator binding="#{bindings.ProcessStepsDescr.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.DataMappings.inputValue}" label="#{bindings.DataMappings.hints.label}"
+                      required="#{bindings.DataMappings.hints.mandatory}"
+                      columns="#{bindings.DataMappings.hints.displayWidth}"
+                      maximumLength="#{bindings.DataMappings.hints.precision}"
+                      shortDesc="#{bindings.DataMappings.hints.tooltip}" id="it14">
+          <f:validator binding="#{bindings.DataMappings.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.AddProcessLogic.inputValue}" label="#{bindings.AddProcessLogic.hints.label}"
+                      required="#{bindings.AddProcessLogic.hints.mandatory}"
+                      columns="#{bindings.AddProcessLogic.hints.displayWidth}"
+                      maximumLength="#{bindings.AddProcessLogic.hints.precision}"
+                      shortDesc="#{bindings.AddProcessLogic.hints.tooltip}" id="it15">
+          <f:validator binding="#{bindings.AddProcessLogic.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.DataSelectAndFilterCrit.inputValue}"
+                      label="#{bindings.DataSelectAndFilterCrit.hints.label}"
+                      required="#{bindings.DataSelectAndFilterCrit.hints.mandatory}"
+                      columns="#{bindings.DataSelectAndFilterCrit.hints.displayWidth}"
+                      maximumLength="#{bindings.DataSelectAndFilterCrit.hints.precision}"
+                      shortDesc="#{bindings.DataSelectAndFilterCrit.hints.tooltip}" id="it16">
+          <f:validator binding="#{bindings.DataSelectAndFilterCrit.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.PreExtractCleanUpCrit.inputValue}"
+                      label="#{bindings.PreExtractCleanUpCrit.hints.label}"
+                      required="#{bindings.PreExtractCleanUpCrit.hints.mandatory}"
+                      columns="#{bindings.PreExtractCleanUpCrit.hints.displayWidth}"
+                      maximumLength="#{bindings.PreExtractCleanUpCrit.hints.precision}"
+                      shortDesc="#{bindings.PreExtractCleanUpCrit.hints.tooltip}" id="it17">
+          <f:validator binding="#{bindings.PreExtractCleanUpCrit.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.TestScenarioAcceptanceCrit.inputValue}"
+                      label="#{bindings.TestScenarioAcceptanceCrit.hints.label}"
+                      required="#{bindings.TestScenarioAcceptanceCrit.hints.mandatory}"
+                      columns="#{bindings.TestScenarioAcceptanceCrit.hints.displayWidth}"
+                      maximumLength="#{bindings.TestScenarioAcceptanceCrit.hints.precision}"
+                      shortDesc="#{bindings.TestScenarioAcceptanceCrit.hints.tooltip}" id="it18">
+          <f:validator binding="#{bindings.TestScenarioAcceptanceCrit.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.VolAndPerfReqs.inputValue}" label="#{bindings.VolAndPerfReqs.hints.label}"
+                      required="#{bindings.VolAndPerfReqs.hints.mandatory}"
+                      columns="#{bindings.VolAndPerfReqs.hints.displayWidth}"
+                      maximumLength="#{bindings.VolAndPerfReqs.hints.precision}"
+                      shortDesc="#{bindings.VolAndPerfReqs.hints.tooltip}" id="it19">
+          <f:validator binding="#{bindings.VolAndPerfReqs.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.InitFreqAndSchedReqs.inputValue}"
+                      label="#{bindings.InitFreqAndSchedReqs.hints.label}"
+                      required="#{bindings.InitFreqAndSchedReqs.hints.mandatory}"
+                      columns="#{bindings.InitFreqAndSchedReqs.hints.displayWidth}"
+                      maximumLength="#{bindings.InitFreqAndSchedReqs.hints.precision}"
+                      shortDesc="#{bindings.InitFreqAndSchedReqs.hints.tooltip}" id="it20">
+          <f:validator binding="#{bindings.InitFreqAndSchedReqs.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.SecurityAndControlsReqs.inputValue}"
+                      label="#{bindings.SecurityAndControlsReqs.hints.label}"
+                      required="#{bindings.SecurityAndControlsReqs.hints.mandatory}"
+                      columns="#{bindings.SecurityAndControlsReqs.hints.displayWidth}"
+                      maximumLength="#{bindings.SecurityAndControlsReqs.hints.precision}"
+                      shortDesc="#{bindings.SecurityAndControlsReqs.hints.tooltip}" id="it21">
+          <f:validator binding="#{bindings.SecurityAndControlsReqs.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.LogOutput.inputValue}" label="#{bindings.LogOutput.hints.label}"
+                      required="#{bindings.LogOutput.hints.mandatory}"
+                      columns="#{bindings.LogOutput.hints.displayWidth}"
+                      maximumLength="#{bindings.LogOutput.hints.precision}"
+                      shortDesc="#{bindings.LogOutput.hints.tooltip}" id="it22">
+          <f:validator binding="#{bindings.LogOutput.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.RestartProcedures.inputValue}" label="#{bindings.RestartProcedures.hints.label}"
+                      required="#{bindings.RestartProcedures.hints.mandatory}"
+                      columns="#{bindings.RestartProcedures.hints.displayWidth}"
+                      maximumLength="#{bindings.RestartProcedures.hints.precision}"
+                      shortDesc="#{bindings.RestartProcedures.hints.tooltip}" id="it23">
+          <f:validator binding="#{bindings.RestartProcedures.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.Appendix.inputValue}" label="#{bindings.Appendix.hints.label}"
+                      required="#{bindings.Appendix.hints.mandatory}" columns="#{bindings.Appendix.hints.displayWidth}"
+                      maximumLength="#{bindings.Appendix.hints.precision}"
+                      shortDesc="#{bindings.Appendix.hints.tooltip}" id="it24">
+          <f:validator binding="#{bindings.Appendix.validator}"/>
+        </af:inputText>
+        <f:facet name="footer">
+          <af:button text="Submit" id="b1"/>
+        </f:facet>
+      </af:panelFormLayout>
+    </af:form>
+  </af:document>
+</f:view>

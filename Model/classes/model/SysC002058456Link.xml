@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SysC002058456Link"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  EntityAssociation="model.SysC002058456Assoc">
+  <ViewLinkDefEnd
+    Name="PsFDProjectsView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.PsFDProjectsView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="PsFDProjectsView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.PsFDProjectsView.ProjId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="PsFDDistFinalDocView"
+    Cardinality="-1"
+    Owner="model.PsFDDistFinalDocView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="PsFDDistFinalDocView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.PsFDDistFinalDocView.ProjId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

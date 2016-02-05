@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="search">
+    <page>/search.jsf</page>
+  </view>
+  <view id="create_form">
+    <page>/create_form.jsf</page>
+  </view>
+  <view id="edit_form">
+    <page>/edit_form.jsf</page>
+  </view>
+  <method-call id="CreateInsert">
+    <method>#{bindings.CreateInsert.execute}</method>
+    <outcome>
+      <fixed-outcome>CreateInsert</fixed-outcome>
+    </outcome>
+  </method-call>
+  <method-call id="Commit">
+    <method>#{bindings.Commit.execute}</method>
+    <outcome>
+      <fixed-outcome>Commit</fixed-outcome>
+    </outcome>
+  </method-call>
+  <control-flow-rule id="__1">
+    <from-activity-id>search</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>edit_project</from-outcome>
+      <to-activity-id>edit_form</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__3">
+      <from-outcome>add_project</from-outcome>
+      <to-activity-id>CreateInsert</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__4">
+    <from-activity-id>CreateInsert</from-activity-id>
+    <control-flow-case id="__5">
+      <from-outcome>CreateInsert</from-outcome>
+      <to-activity-id>create_form</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__6">
+    <from-activity-id>create_form</from-activity-id>
+    <control-flow-case id="__7">
+      <from-outcome>Commit</from-outcome>
+      <to-activity-id>Commit</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__10">
+      <from-outcome>back</from-outcome>
+      <to-activity-id>search</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__8">
+    <from-activity-id>Commit</from-activity-id>
+    <control-flow-case id="__9">
+      <from-outcome>Commit</from-outcome>
+      <to-activity-id>search</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__11">
+    <from-activity-id>edit_form</from-activity-id>
+    <control-flow-case id="__12">
+      <from-outcome>Commit</from-outcome>
+      <to-activity-id>Commit</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__13">
+      <from-outcome>back</from-outcome>
+      <to-activity-id>search</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>

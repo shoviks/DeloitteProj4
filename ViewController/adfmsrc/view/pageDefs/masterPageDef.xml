@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="masterPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PsFDProjectsView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PsFDProjectsView1Iterator"/>
+    <iterator Binds="PsFDBusRulesView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PsFDBusRulesView2Iterator"/>
+    <iterator Binds="PsFDDocEditHistView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PsFDDocEditHistView2Iterator"/>
+    <searchRegion Binds="PsFDDocEditHistView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PsFDDocEditHistView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PsFDProjectsView1Iterator" id="PsFDProjectsView1">
+      <nodeDefinition DefName="model.PsFDProjectsView" Name="PsFDProjectsView10">
+        <AttrNames>
+          <Item Value="ProjId"/>
+          <Item Value="ProjName"/>
+          <Item Value="Objective"/>
+          <Item Value="BusNeeds"/>
+          <Item Value="MajorFeatures"/>
+          <Item Value="Modules"/>
+          <Item Value="Systems"/>
+          <Item Value="Assumptions"/>
+          <Item Value="DependenciesAndPrereqs"/>
+          <Item Value="RefsToReqs"/>
+          <Item Value="SourceAndTargetSysDescr"/>
+          <Item Value="ProcessFlowDiagram"/>
+          <Item Value="ProcessStepsDescr"/>
+          <Item Value="DataMappings"/>
+          <Item Value="AddProcessLogic"/>
+          <Item Value="DataSelectAndFilterCrit"/>
+          <Item Value="PreExtractCleanUpCrit"/>
+          <Item Value="TestScenarioAcceptanceCrit"/>
+          <Item Value="VolAndPerfReqs"/>
+          <Item Value="InitFreqAndSchedReqs"/>
+          <Item Value="SecurityAndControlsReqs"/>
+          <Item Value="LogOutput"/>
+          <Item Value="RestartProcedures"/>
+          <Item Value="Appendix"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PsFDBusRulesView2Iterator" id="PsFDBusRulesView2">
+      <nodeDefinition DefName="model.PsFDBusRulesView" Name="PsFDBusRulesView20">
+        <AttrNames>
+          <Item Value="ProjId"/>
+          <Item Value="RuleType"/>
+          <Item Value="RuleId"/>
+          <Item Value="Description"/>
+          <Item Value="Comments"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PsFDDocEditHistView2Iterator" id="PsFDDocEditHistView2">
+      <nodeDefinition DefName="model.PsFDDocEditHistView" Name="PsFDDocEditHistView20">
+        <AttrNames>
+          <Item Value="ProjId"/>
+          <Item Value="DocEditId"/>
+          <Item Value="DocVersion"/>
+          <Item Value="EditDate"/>
+          <Item Value="AddModifications"/>
+          <Item Value="Cr"/>
+          <Item Value="PreparedBy"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

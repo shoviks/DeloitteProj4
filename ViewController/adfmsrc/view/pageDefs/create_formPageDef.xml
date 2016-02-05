@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="create_formPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PsFDProjectsView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PsFDProjectsView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="ProjId">
+      <AttrNames>
+        <Item Value="ProjId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="ProjName">
+      <AttrNames>
+        <Item Value="ProjName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="Objective">
+      <AttrNames>
+        <Item Value="Objective"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="BusNeeds">
+      <AttrNames>
+        <Item Value="BusNeeds"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="MajorFeatures">
+      <AttrNames>
+        <Item Value="MajorFeatures"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="Modules">
+      <AttrNames>
+        <Item Value="Modules"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="Systems">
+      <AttrNames>
+        <Item Value="Systems"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="Assumptions">
+      <AttrNames>
+        <Item Value="Assumptions"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="DependenciesAndPrereqs">
+      <AttrNames>
+        <Item Value="DependenciesAndPrereqs"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="RefsToReqs">
+      <AttrNames>
+        <Item Value="RefsToReqs"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="SourceAndTargetSysDescr">
+      <AttrNames>
+        <Item Value="SourceAndTargetSysDescr"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="ProcessFlowDiagram">
+      <AttrNames>
+        <Item Value="ProcessFlowDiagram"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="ProcessStepsDescr">
+      <AttrNames>
+        <Item Value="ProcessStepsDescr"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="DataMappings">
+      <AttrNames>
+        <Item Value="DataMappings"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="AddProcessLogic">
+      <AttrNames>
+        <Item Value="AddProcessLogic"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="DataSelectAndFilterCrit">
+      <AttrNames>
+        <Item Value="DataSelectAndFilterCrit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="PreExtractCleanUpCrit">
+      <AttrNames>
+        <Item Value="PreExtractCleanUpCrit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="TestScenarioAcceptanceCrit">
+      <AttrNames>
+        <Item Value="TestScenarioAcceptanceCrit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="VolAndPerfReqs">
+      <AttrNames>
+        <Item Value="VolAndPerfReqs"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="InitFreqAndSchedReqs">
+      <AttrNames>
+        <Item Value="InitFreqAndSchedReqs"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="SecurityAndControlsReqs">
+      <AttrNames>
+        <Item Value="SecurityAndControlsReqs"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="LogOutput">
+      <AttrNames>
+        <Item Value="LogOutput"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="RestartProcedures">
+      <AttrNames>
+        <Item Value="RestartProcedures"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PsFDProjectsView1Iterator" id="Appendix">
+      <AttrNames>
+        <Item Value="Appendix"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

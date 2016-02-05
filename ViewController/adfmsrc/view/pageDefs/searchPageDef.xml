@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="searchPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PsFDProjectsView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PsFDProjectsView1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="PsFDProjectsView1Iterator" id="ImplicitViewCriteriaQuery"/>
+    <iterator Binds="PsFDBusRulesView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PsFDBusRulesView2Iterator"/>
+    <iterator Binds="PsFDDocInfoView2" RangeSize="25" DataControl="AppModuleDataControl" id="PsFDDocInfoView2Iterator"/>
+    <iterator Binds="PsFDDocEditHistView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PsFDDocEditHistView2Iterator"/>
+    <iterator Binds="PsFDDocRevApprovalHistView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PsFDDocRevApprovalHistView2Iterator"/>
+    <iterator Binds="PsFDDistFinalDocView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PsFDDistFinalDocView2Iterator"/>
+    <iterator Binds="PsFDRelatedDocsView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PsFDRelatedDocsView2Iterator"/>
+    <iterator Binds="PsFDNomenclatureView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PsFDNomenclatureView2Iterator"/>
+    <iterator Binds="PsFDInterfacesView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PsFDInterfacesView2Iterator"/>
+    <iterator Binds="PsFDOpenIssuesView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PsFDOpenIssuesView2Iterator"/>
+    <iterator Binds="PsFDErrorsView2" RangeSize="25" DataControl="AppModuleDataControl" id="PsFDErrorsView2Iterator"/>
+    <iterator Binds="PsFDClosedIssuesView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PsFDClosedIssuesView2Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PsFDProjectsView1Iterator" id="PsFDProjectsView1">
+      <nodeDefinition DefName="model.PsFDProjectsView" Name="PsFDProjectsView10">
+        <AttrNames>
+          <Item Value="ProjId"/>
+          <Item Value="ProjName"/>
+          <Item Value="Objective"/>
+          <Item Value="BusNeeds"/>
+          <Item Value="MajorFeatures"/>
+          <Item Value="Modules"/>
+          <Item Value="Systems"/>
+          <Item Value="Assumptions"/>
+          <Item Value="DependenciesAndPrereqs"/>
+          <Item Value="RefsToReqs"/>
+          <Item Value="SourceAndTargetSysDescr"/>
+          <Item Value="ProcessFlowDiagram"/>
+          <Item Value="ProcessStepsDescr"/>
+          <Item Value="DataMappings"/>
+          <Item Value="AddProcessLogic"/>
+          <Item Value="DataSelectAndFilterCrit"/>
+          <Item Value="PreExtractCleanUpCrit"/>
+          <Item Value="TestScenarioAcceptanceCrit"/>
+          <Item Value="VolAndPerfReqs"/>
+          <Item Value="InitFreqAndSchedReqs"/>
+          <Item Value="SecurityAndControlsReqs"/>
+          <Item Value="LogOutput"/>
+          <Item Value="RestartProcedures"/>
+          <Item Value="Appendix"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PsFDBusRulesView2Iterator" id="PsFDBusRulesView2">
+      <nodeDefinition DefName="model.PsFDBusRulesView" Name="PsFDBusRulesView20">
+        <AttrNames>
+          <Item Value="ProjId"/>
+          <Item Value="RuleType"/>
+          <Item Value="RuleId"/>
+          <Item Value="Description"/>
+          <Item Value="Comments"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PsFDDocInfoView2Iterator" id="PsFDDocInfoView2">
+      <nodeDefinition DefName="model.PsFDDocInfoView" Name="PsFDDocInfoView20">
+        <AttrNames>
+          <Item Value="DocNo"/>
+          <Item Value="ProjId"/>
+          <Item Value="DocIdentification"/>
+          <Item Value="DocName"/>
+          <Item Value="ProjName"/>
+          <Item Value="ClientName"/>
+          <Item Value="DocAuthor"/>
+          <Item Value="DocVersion"/>
+          <Item Value="DocStatus"/>
+          <Item Value="DateReleased"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PsFDDocEditHistView2Iterator" id="PsFDDocEditHistView2">
+      <nodeDefinition DefName="model.PsFDDocEditHistView" Name="PsFDDocEditHistView20">
+        <AttrNames>
+          <Item Value="ProjId"/>
+          <Item Value="DocEditId"/>
+          <Item Value="DocVersion"/>
+          <Item Value="EditDate"/>
+          <Item Value="AddModifications"/>
+          <Item Value="Cr"/>
+          <Item Value="PreparedBy"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PsFDDocRevApprovalHistView2Iterator" id="PsFDDocRevApprovalHistView2">
+      <nodeDefinition DefName="model.PsFDDocRevApprovalHistView" Name="PsFDDocRevApprovalHistView20">
+        <AttrNames>
+          <Item Value="DocRevId"/>
+          <Item Value="ProjId"/>
+          <Item Value="ReviewDate"/>
+          <Item Value="DocVersion"/>
+          <Item Value="DocName"/>
+          <Item Value="Title"/>
+          <Item Value="Comments"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PsFDDistFinalDocView2Iterator" id="PsFDDistFinalDocView2">
+      <nodeDefinition DefName="model.PsFDDistFinalDocView" Name="PsFDDistFinalDocView20">
+        <AttrNames>
+          <Item Value="RecipientId"/>
+          <Item Value="ProjId"/>
+          <Item Value="DocName"/>
+          <Item Value="Title"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PsFDRelatedDocsView2Iterator" id="PsFDRelatedDocsView2">
+      <nodeDefinition DefName="model.PsFDRelatedDocsView" Name="PsFDRelatedDocsView20">
+        <AttrNames>
+          <Item Value="RelatedDocId"/>
+          <Item Value="ProjId"/>
+          <Item Value="DocName"/>
+          <Item Value="Revision"/>
+          <Item Value="DocDescr"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PsFDNomenclatureView2Iterator" id="PsFDNomenclatureView2">
+      <nodeDefinition DefName="model.PsFDNomenclatureView" Name="PsFDNomenclatureView20">
+        <AttrNames>
+          <Item Value="NomenclatureId"/>
+          <Item Value="ProjId"/>
+          <Item Value="Acronym"/>
+          <Item Value="Meaning"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PsFDInterfacesView2Iterator" id="PsFDInterfacesView2">
+      <nodeDefinition DefName="model.PsFDInterfacesView" Name="PsFDInterfacesView20">
+        <AttrNames>
+          <Item Value="InterfaceId"/>
+          <Item Value="ProjId"/>
+          <Item Value="InterfaceName"/>
+          <Item Value="InterfaceShortDescr"/>
+          <Item Value="Direction"/>
+          <Item Value="DataCategory"/>
+          <Item Value="InterfaceType"/>
+          <Item Value="BusinessPriority"/>
+          <Item Value="Frequency"/>
+          <Item Value="FromSystem"/>
+          <Item Value="AddComments"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PsFDOpenIssuesView2Iterator" id="PsFDOpenIssuesView2">
+      <nodeDefinition DefName="model.PsFDOpenIssuesView" Name="PsFDOpenIssuesView20">
+        <AttrNames>
+          <Item Value="IssueId"/>
+          <Item Value="ProjId"/>
+          <Item Value="Description"/>
+          <Item Value="OpenedBy"/>
+          <Item Value="Responsible"/>
+          <Item Value="DueDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PsFDErrorsView2Iterator" id="PsFDErrorsView2">
+      <nodeDefinition DefName="model.PsFDErrorsView" Name="PsFDErrorsView20">
+        <AttrNames>
+          <Item Value="ErrorId"/>
+          <Item Value="ProjId"/>
+          <Item Value="SNo"/>
+          <Item Value="ErrorCode"/>
+          <Item Value="ErrorType"/>
+          <Item Value="Description"/>
+          <Item Value="Handler"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PsFDClosedIssuesView2Iterator" id="PsFDClosedIssuesView2">
+      <nodeDefinition DefName="model.PsFDClosedIssuesView" Name="PsFDClosedIssuesView20">
+        <AttrNames>
+          <Item Value="IssueId"/>
+          <Item Value="Description"/>
+          <Item Value="Resolution"/>
+          <Item Value="Signoff"/>
+          <Item Value="ClosedDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="PsFDProjectsView1Iterator" id="setCurrentRowWithKeyValue" RequiresUpdateModel="false"
+            Action="setCurrentRowWithKeyValue">
+      <NamedData NDName="rowKey" NDValue="#{row.ProjId}" NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>
