@@ -177,7 +177,10 @@
           <f:validator binding="#{bindings.Appendix.validator}"/>
         </af:inputText>
         <f:facet name="footer">
-          <af:button text="Submit" id="b1"/>
+          <af:panelGroupLayout id="pgl1" layout="horizontal">
+            <af:button text="Submit" id="b1" action="Commit"/>
+            <af:button text="Cancel" id="b2" action="back"/>
+          </af:panelGroupLayout>
         </f:facet>
       </af:panelFormLayout>
     </af:form>

@@ -68,7 +68,7 @@
       <property
          name="fromOutcome">edit_project</property>
       <property
-         name="sdm:polyPoints">T42,161.81717,188.46387,309.86862,104.66191,L45</property>
+         name="sdm:polyPoints">T44,163.0,191.0231,311.6468,105.84473,L46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -78,7 +78,7 @@
       <property
          name="fromOutcome">add_project</property>
       <property
-         name="sdm:polyPoints">B50,166.49998,304.2287,166.01465,369.21368,T50</property>
+         name="sdm:polyPoints">B50,166.5,303.0459,166.01465,370.39648,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -88,7 +88,7 @@
       <property
          name="fromOutcome">CreateInsert</property>
       <property
-         name="sdm:polyPoints">R50,208.19746,424.39648,390.82986,424.22284,L55</property>
+         name="sdm:polyPoints">R50,207.01465,424.39648,392.0127,423.04004,L54</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall9">
@@ -111,7 +111,7 @@
       <property
          name="fromOutcome">Commit</property>
       <property
-         name="sdm:polyPoints">T50,433.01266,364.35724,596.3172,253.7621,L61</property>
+         name="sdm:polyPoints">T50,433.0127,365.54004,597.5,251.39648,L58</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -121,7 +121,7 @@
       <property
          name="fromOutcome">Commit</property>
       <property
-         name="sdm:polyPoints">L50,594.96564,244.39648,210.45699,244.36308,R45</property>
+         name="sdm:polyPoints">L50,596.3994,244.39648,207.5,245.5459,R46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -131,7 +131,7 @@
       <property
          name="fromOutcome">back</property>
       <property
-         name="sdm:polyPoints">L45,390.82986,414.85724,208.6828,253.72871,R55</property>
+         name="sdm:polyPoints">L46,392.0127,416.04004,207.5,252.5459,R54</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -141,7 +141,7 @@
       <property
          name="fromOutcome">Commit</property>
       <property
-         name="sdm:polyPoints">R50,396.68277,109.34473,596.3172,235.03085,L39</property>
+         name="sdm:polyPoints">R50,395.5,109.34473,597.5,237.39648,L42</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -151,6 +151,6 @@
       <property
          name="fromOutcome">back</property>
       <property
-         name="sdm:polyPoints">L55,312.31717,114.02754,171.1828,193.86308,T58</property>
+         name="sdm:polyPoints">L54,313.5,112.84473,170.0,195.0459,T56</property>
    </ControlFlowCase>
 </SDM>

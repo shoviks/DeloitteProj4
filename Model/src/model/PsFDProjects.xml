@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="PS_F_D_PROJECTS"
   AliasName="PsFDProjects"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.PsFDProjectsImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="ProjId"
     IsNotNull="true"

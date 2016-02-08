@@ -128,5 +128,7 @@
         <Item Value="Appendix"/>
       </AttrNames>
     </attributeValues>
+    <action IterBinding="PsFDProjectsView1Iterator" id="Delete" InstanceName="AppModuleDataControl.PsFDProjectsView1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

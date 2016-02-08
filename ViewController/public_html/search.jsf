@@ -5,7 +5,8 @@
     <af:messages id="m1"/>
     <af:form id="f1">
       <af:panelGroupLayout layout="vertical" id="pgl1">
-        <af:panelHeader text="Projects" id="ph1">
+        <af:spacer width="10" height="10" id="s2"/>
+        <af:panelHeader text="MST Functional Specs" id="ph1" icon="/images/macys-logo-vector.png">
           <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
                          value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
                          model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
@@ -21,136 +22,134 @@
                   rowBandingInterval="0" selectedRowKeys="#{bindings.PsFDProjectsView1.collectionModel.selectedRow}"
                   selectionListener="#{bindings.PsFDProjectsView1.collectionModel.makeCurrent}" rowSelection="single"
                   fetchSize="#{bindings.PsFDProjectsView1.rangeSize}" id="t1"
-                  partialTriggers="::qryId1 ::qryId1:cl1 ::b1">
+                  partialTriggers="::qryId1 ::qryId1:cl1 l2 l1 l3 l4 l5 l6 l7 l8 l9 l10 l11 l12 l13 l14 l15 l16 l17 l18 l19 l20 l21 l22 l23 l24">
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.ProjId.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.ProjId.label}" id="c1">
-            <af:outputText value="#{row.ProjId}" shortDesc="#{bindings.PsFDProjectsView1.hints.ProjId.tooltip}"
-                           id="ot1">
-              <af:convertNumber groupingUsed="false" pattern="#{bindings.PsFDProjectsView1.hints.ProjId.format}"/>
-            </af:outputText>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}" text="#{row.ProjId}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l2" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.ProjName.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.ProjName.label}" id="c2">
-            <af:outputText value="#{row.ProjName}" shortDesc="#{bindings.PsFDProjectsView1.hints.ProjName.tooltip}"
-                           id="ot2"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}" text="#{row.ProjName}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l1" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.Objective.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.Objective.label}" id="c3">
-            <af:outputText value="#{row.Objective}" shortDesc="#{bindings.PsFDProjectsView1.hints.Objective.tooltip}"
-                           id="ot3"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}" text="#{row.Objective}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l3" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.BusNeeds.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.BusNeeds.label}" id="c4">
-            <af:outputText value="#{row.BusNeeds}" shortDesc="#{bindings.PsFDProjectsView1.hints.BusNeeds.tooltip}"
-                           id="ot4"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}" text="#{row.BusNeeds}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l4" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.MajorFeatures.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.MajorFeatures.label}" id="c5">
-            <af:outputText value="#{row.MajorFeatures}"
-                           shortDesc="#{bindings.PsFDProjectsView1.hints.MajorFeatures.tooltip}" id="ot5"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}" text="#{row.MajorFeatures}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l5" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.Modules.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.Modules.label}" id="c6">
-            <af:outputText value="#{row.Modules}" shortDesc="#{bindings.PsFDProjectsView1.hints.Modules.tooltip}"
-                           id="ot6"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}" text="#{row.Modules}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l6" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.Systems.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.Systems.label}" id="c7">
-            <af:outputText value="#{row.Systems}" shortDesc="#{bindings.PsFDProjectsView1.hints.Systems.tooltip}"
-                           id="ot7"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}" text="#{row.Systems}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l7" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.Assumptions.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.Assumptions.label}" id="c8">
-            <af:outputText value="#{row.Assumptions}"
-                           shortDesc="#{bindings.PsFDProjectsView1.hints.Assumptions.tooltip}" id="ot8"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}" text="#{row.Assumptions}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l8" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.DependenciesAndPrereqs.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.DependenciesAndPrereqs.label}" id="c9">
-            <af:outputText value="#{row.DependenciesAndPrereqs}"
-                           shortDesc="#{bindings.PsFDProjectsView1.hints.DependenciesAndPrereqs.tooltip}" id="ot9"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}"
+                     text="#{row.DependenciesAndPrereqs}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l9" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.RefsToReqs.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.RefsToReqs.label}" id="c10">
-            <af:outputText value="#{row.RefsToReqs}" shortDesc="#{bindings.PsFDProjectsView1.hints.RefsToReqs.tooltip}"
-                           id="ot10"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}" text="#{row.RefsToReqs}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l10" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.SourceAndTargetSysDescr.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.SourceAndTargetSysDescr.label}" id="c11">
-            <af:outputText value="#{row.SourceAndTargetSysDescr}"
-                           shortDesc="#{bindings.PsFDProjectsView1.hints.SourceAndTargetSysDescr.tooltip}" id="ot11"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}"
+                     text="#{row.SourceAndTargetSysDescr}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l11" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.ProcessFlowDiagram.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.ProcessFlowDiagram.label}" id="c12">
-            <af:outputText value="#{row.ProcessFlowDiagram}"
-                           shortDesc="#{bindings.PsFDProjectsView1.hints.ProcessFlowDiagram.tooltip}" id="ot12"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}" text="#{row.ProcessFlowDiagram}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l12" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.ProcessStepsDescr.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.ProcessStepsDescr.label}" id="c13">
-            <af:outputText value="#{row.ProcessStepsDescr}"
-                           shortDesc="#{bindings.PsFDProjectsView1.hints.ProcessStepsDescr.tooltip}" id="ot13"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}" text="#{row.ProcessStepsDescr}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l14" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.DataMappings.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.DataMappings.label}" id="c14">
-            <af:outputText value="#{row.DataMappings}"
-                           shortDesc="#{bindings.PsFDProjectsView1.hints.DataMappings.tooltip}" id="ot14"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}" text="#{row.DataMappings}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l13" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.AddProcessLogic.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.AddProcessLogic.label}" id="c15">
-            <af:outputText value="#{row.AddProcessLogic}"
-                           shortDesc="#{bindings.PsFDProjectsView1.hints.AddProcessLogic.tooltip}" id="ot15"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}" text="#{row.AddProcessLogic}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l15" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.DataSelectAndFilterCrit.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.DataSelectAndFilterCrit.label}" id="c16">
-            <af:outputText value="#{row.DataSelectAndFilterCrit}"
-                           shortDesc="#{bindings.PsFDProjectsView1.hints.DataSelectAndFilterCrit.tooltip}" id="ot16"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}"
+                     text="#{row.DataSelectAndFilterCrit}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l16" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.PreExtractCleanUpCrit.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.PreExtractCleanUpCrit.label}" id="c17">
-            <af:outputText value="#{row.PreExtractCleanUpCrit}"
-                           shortDesc="#{bindings.PsFDProjectsView1.hints.PreExtractCleanUpCrit.tooltip}" id="ot17"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}" text="#{row.PreExtractCleanUpCrit}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l17" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.TestScenarioAcceptanceCrit.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.TestScenarioAcceptanceCrit.label}" id="c18">
-            <af:outputText value="#{row.TestScenarioAcceptanceCrit}"
-                           shortDesc="#{bindings.PsFDProjectsView1.hints.TestScenarioAcceptanceCrit.tooltip}"
-                           id="ot18"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}"
+                     text="#{row.TestScenarioAcceptanceCrit}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l18" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.VolAndPerfReqs.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.VolAndPerfReqs.label}" id="c19">
-            <af:outputText value="#{row.VolAndPerfReqs}"
-                           shortDesc="#{bindings.PsFDProjectsView1.hints.VolAndPerfReqs.tooltip}" id="ot19"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}" text="#{row.VolAndPerfReqs}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l19" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.InitFreqAndSchedReqs.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.InitFreqAndSchedReqs.label}" id="c20">
-            <af:outputText value="#{row.InitFreqAndSchedReqs}"
-                           shortDesc="#{bindings.PsFDProjectsView1.hints.InitFreqAndSchedReqs.tooltip}" id="ot20"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}" text="#{row.InitFreqAndSchedReqs}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l20" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.SecurityAndControlsReqs.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.SecurityAndControlsReqs.label}" id="c21">
-            <af:outputText value="#{row.SecurityAndControlsReqs}"
-                           shortDesc="#{bindings.PsFDProjectsView1.hints.SecurityAndControlsReqs.tooltip}" id="ot21"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}"
+                     text="#{row.SecurityAndControlsReqs}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l21" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.LogOutput.name}" sortable="true"
-                     headerText="#{bindings.PsFDProjectsView1.hints.LogOutput.label}" id="c22">
-            <af:outputText value="#{row.LogOutput}" shortDesc="#{bindings.PsFDProjectsView1.hints.LogOutput.tooltip}"
-                           id="ot22"/>
+                     headerText="#{bindings.PsFDProjectsView1.hints.LogOutput.label}" id="c22" width="100">
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}" text="#{row.LogOutput}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l22" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.RestartProcedures.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.RestartProcedures.label}" id="c23">
-            <af:outputText value="#{row.RestartProcedures}"
-                           shortDesc="#{bindings.PsFDProjectsView1.hints.RestartProcedures.tooltip}" id="ot23"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}" text="#{row.RestartProcedures}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l23" action="edit_project"/>
           </af:column>
           <af:column sortProperty="#{bindings.PsFDProjectsView1.hints.Appendix.name}" sortable="true"
                      headerText="#{bindings.PsFDProjectsView1.hints.Appendix.label}" id="c24">
-            <af:outputText value="#{row.Appendix}" shortDesc="#{bindings.PsFDProjectsView1.hints.Appendix.tooltip}"
-                           id="ot24"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue1.execute}" text="#{row.Appendix}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue1.enabled}" id="l24" action="edit_project"/>
           </af:column>
         </af:table>
-        <af:button actionListener="#{bindings.setCurrentRowWithKeyValue.execute}" text="Edit"
-                   disabled="#{!bindings.setCurrentRowWithKeyValue.enabled}" id="b1" action="edit_project"
-                   icon="#{resource['edit_ena.png']}"/>
         <af:button text="New" id="b2" icon="#{resource['new_ena.png']}" action="add_project"/>
-        <af:button text="button 1" id="b3"/>
         <af:spacer width="10" height="10" id="s1"/>
         <af:panelTabbed position="above" id="pt1">
           <af:showDetailItem id="tab10" text="Document Info">
