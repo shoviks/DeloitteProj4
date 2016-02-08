@@ -198,7 +198,7 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="PsFDProjectsView1Iterator" id="setCurrentRowWithKeyValue" RequiresUpdateModel="false"
+    <action IterBinding="PsFDProjectsView1Iterator" id="setCurrentRowWithKeyValue1" RequiresUpdateModel="false"
             Action="setCurrentRowWithKeyValue">
       <NamedData NDName="rowKey" NDValue="#{row.ProjId}" NDType="java.lang.String"/>
     </action>
