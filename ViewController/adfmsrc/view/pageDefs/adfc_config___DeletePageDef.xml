@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="adfc_config___DeletePageDef"
+                Package="view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="PsFDProjectsView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PsFDProjectsView1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="PsFDProjectsView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>
